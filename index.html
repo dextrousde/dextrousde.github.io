@@ -1,233 +1,505 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Dextrous Design Engineering</title>
+        <meta name="description" content="Physical product design, engineering and manufacturing">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.5">
-    <title>Blog Template · Bootstrap</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" href="css/hero-slider.css">
+        <link rel="stylesheet" href="css/dde-main.css">
+        <link rel="stylesheet" href="css/owl-carousel.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,600,700,800" rel="stylesheet">
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        
+            
+        <!-- <script src="js/vendor/jquery-1.11.2.min.js"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>  -->
+        
+    </head>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/blog/">
-
-    <!-- Bootstrap core CSS -->
-    <!-- link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
+    <script>
+        function openCity(cityName) {
+            var i;
+            var x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
             }
+            document.getElementById(cityName).style.display = "block";  
         }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="blog.css" rel="stylesheet">
-</head>
+
+        $(document).ready(function(){
+            // Add smooth scrolling to all links
+            $(".fixed-side-navbar a, .primary-button a").on('click', function(event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function(){
+            
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+                } // End if
+            });
+
+            // $("#header").load("support-pages/header.html"); 
+            $("#footer").load("support-pages/footer.html"); 
+        });
+    </script>
+
 <body>
-    <div class="container">
-        <header class="blog-header py-3">
-            <div class="row flex-nowrap justify-content-between align-items-center">
-                <div class="col-4 pt-1">
-                    <a class="text-muted" href="#">Subscribe</a>
-                </div>
-                <div class="col-4 text-center">
-                    <a class="blog-header-logo text-dark" href="#">Large</a>
-                </div>
-                <div class="col-4 d-flex justify-content-end align-items-center">
-                    <a class="text-muted" href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24" focusable="false"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5" /><path d="M21 21l-5.2-5.2" /></svg>
-                    </a>
-                    <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-                </div>
-            </div>
-        </header>
+    <!-- Side Navigation -->
+    <div class="fixed-side-navbar">
+        <ul class="nav flex-column">
+            <!-- <li class="nav-item"><a class="nav-link" href="#home"><span>Intro</span></a></li> -->
+            <li class="nav-item"><a class="nav-link" href="#services"><span>Services</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#portfolio"><span>Portfolio</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#processes"><span>Processes</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#WhyChooseUs"><span>Why Choose Us</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#WithWhom"><span>Clients</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact-us"><span>Contact Us</span></a></li>
+        </ul>
+    </div>
 
-        <div class="nav-scroller py-1 mb-2">
-            <nav class="nav d-flex justify-content-between">
-                <a class="p-2 text-muted" href="#">World</a>
-                <a class="p-2 text-muted" href="#">U.S.</a>
-                <a class="p-2 text-muted" href="#">Technology</a>
-                <a class="p-2 text-muted" href="#">Design</a>
-                <a class="p-2 text-muted" href="#">Culture</a>
-                <a class="p-2 text-muted" href="#">Business</a>
-                <a class="p-2 text-muted" href="#">Politics</a>
-                <a class="p-2 text-muted" href="#">Opinion</a>
-                <a class="p-2 text-muted" href="#">Science</a>
-                <a class="p-2 text-muted" href="#">Health</a>
-                <a class="p-2 text-muted" href="#">Style</a>
-                <a class="p-2 text-muted" href="#">Travel</a>
-            </nav>
-        </div>
-
-        <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
-            <div class="col-md-6 px-0">
-                <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
-                <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-                <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+    <!-- Home Banner -->
+    <div class="parallax-content baner-content" id="home">
+        <div class="container">
+            <div class="first-content">
+                <span><h1>Dextrous Design Engineering</h1></span>
+                <span><em>Trusted Partner</em> in Physical Product Design, Engineering and Manufacturing</span>
+                <div class="primary-button">
+                    <a href="#services">Discover More</a>
+                </div>
             </div>
         </div>
+    </div>
 
-        <div class="row mb-2">
-            <div class="col-md-6">
-                <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <strong class="d-inline-block mb-2 text-primary">World</strong>
-                        <h3 class="mb-0">Featured post</h3>
-                        <div class="mb-1 text-muted">Nov 12</div>
-                        <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="stretched-link">Continue reading</a>
-                    </div>
-                    <div class="col-auto d-none d-lg-block">
-                        <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+    <!-- Service Offerings -->
+    <div class="service-content" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="left-text">
+                        <h4>What Do We Do?</h4>
+                        <div class="line-dec"></div>
+                        <p>We offer four (4) major service categories for products in the following industries:</p>
+                        <ul>
+                            <li>-  Internet of Things (IoT)</li>
+                            <li>-  Consumer</li>
+                            <li>-  Scientific Devices</li>
+                            <li>-  Health &amp; Medical</li>
+                            <li>-  Automotive Parts &amp; Accessories</li>
+                            <li>-  Electric Vehicles &amp; E-Mobility</li>
+                            <li>-  Toys</li>
+                        </ul>
+                        <div class="primary-button">
+                            <a href="#portfolio">See our portfolio</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <strong class="d-inline-block mb-2 text-success">Design</strong>
-                        <h3 class="mb-0">Post title</h3>
-                        <div class="mb-1 text-muted">Nov 11</div>
-                        <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="stretched-link">Continue reading</a>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <h4>Product Development</h4>
+                                <div class="line-dec"></div>
+                                <p>End-to-end product development process from industrial design, ideation, prototyping, engineering to manufacturing introduction or portions thereof.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <h4>Competitive Analysis</h4>
+                                <div class="line-dec"></div>
+                                <p>Teardown analysis of your product with specified competitors' products in terms of cost, design and functionality, along with a roadmap for your product improvements.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <h4>Service Menu</h4>
+                                <div class="line-dec"></div>
+                                <p>Looking to offload certain R&amp;D or Manufacturing tasks? Check out our full Service Menu for mechanical, electrical and software engineering. </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <h4>Patent Documentation</h4>
+                                <div class="line-dec"></div>
+                                <p>Whether we designed your product or not, we prepare patent documentations and work with a patent agent or attorney for your patent filings. </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-auto d-none d-lg-block">
-                        <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Carousel -->
+    <div class="projects-content" id="portfolio">
+        <div class="container">            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="left-text">
+                        <h4>Portfolio</h4>
+                        <div class="line-dec"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div id="owl-portfolios" class="owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="portfolios-item">
+                                <a href="img/1st-big-item.jpg" data-lightbox="image-1"><img src="img/1st-item.jpg" alt=""></a>
+                                <div class="text-content">
+                                    <h4>Smart Cufflinks</h4>
+                                    <span>IoT</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="portfolios-item">
+                                <a href="img/2nd-big-item.jpg" data-lightbox="image-1"><img src="img/2nd-item.jpg" alt=""></a>
+                                <div class="text-content">
+                                    <h4>Mustang Speedometer Clock</h4>
+                                    <span>IoT</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="portfolios-item">
+                                <a href="img/3rd-big-item.jpg" data-lightbox="image-1"><img src="img/3rd-item.jpg" alt=""></a>
+                                <div class="text-content">
+                                    <h4>Magnetoencephalogy (MEG) Helmet</h4>
+                                    <span>Health &amp; Medical</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="portfolios-item">
+                                <a href="img/4th-big-item.jpg" data-lightbox="image-1"><img src="img/4th-item.jpg" alt=""></a>
+                                <div class="text-content">
+                                    <h4>Fetal Magnetocardiography (fMCG) System</h4>
+                                    <span>Health &amp; Medical</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="portfolios-item">
+                                <a href="img/5th-big-item.jpg" data-lightbox="image-1"><img src="img/5th-item.jpg" alt=""></a>
+                                <div class="text-content">
+                                    <h4>Eco-Friendly Straw</h4>
+                                    <span>Consumer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="portfolios-item">
+                                <a href="img/6th-big-item.jpg" data-lightbox="image-1"><img src="img/6th-item.jpg" alt=""></a>
+                                <div class="text-content">
+                                    <h4>Travel Mug for Busy People</h4>
+                                    <span>Consumer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="portfolios-item">
+                                <a href="img/2nd-big-item.jpg" data-lightbox="image-1"><img src="img/2nd-item.jpg" alt=""></a>
+                                <div class="text-content">
+                                    <h4>Handy Mirror</h4>
+                                    <span>Automotive</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="portfolios-item">
+                                <a href="img/1st-big-item.jpg" data-lightbox="image-1"><img src="img/1st-item.jpg" alt=""></a>
+                                <div class="text-content">
+                                    <h4>48V Electric Motorcycle</h4>
+                                    <span>Electric Vehicles &amp; E-mobility</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="portfolios-item">
+                                <a href="img/1st-big-item.jpg" data-lightbox="image-1"><img src="img/1st-item.jpg" alt=""></a>
+                                <div class="text-content">
+                                    <h4>Atomic Magnetometers</h4>
+                                    <span>Scientific Devices</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <main role="main" class="container">
+    <!-- Processes and Prototyping Capabilities -->
+    <div class="tabs-content" id="processes">
+        <div class="container">
+            <div class="row">
+                    <div class="left-text">
+                            <h4>Processes and Prototyping Capabilities</h4>
+                            <div class="line-dec"></div>
+                        </div>
+            </div>
+            <div class="row">                  
+                <div class="col-md-8 mx-auto">
+                    <div class="wrapper">
+                    <section id="first-tab-group" class="tabgroup">
+                      <div id="tab1">
+                        <img src="img/1st-tab.jpg" alt="">
+                        <p>3D printing with FDM, SLA printers</p>
+                      </div>
+                      <div id="tab2">
+                        <img src="img/2nd-tab.jpg" alt="">
+                        <p>Certified 3D scanning capabilities for reverse engineering</p>
+                      </div>
+                      <div id="tab3">
+                        <img src="img/3rd-tab.jpg" alt="">
+                        <p>Machining capabilities including CNC, Mill, Lathe, Drill, Laser Cutting / Etching</p>
+                      </div>
+                      <div id="tab4">
+                        <img src="img/4th-tab.jpg" alt="">
+                        <p>Electrical system fabrication including soldering, spot welding, crimping</p>
+                      </div>
+                      <div id="tab5">
+                        <img src="img/4th-tab.jpg" alt="">
+                        <p>Electrical and PCB Layout Design</p>
+                      </div>
+                    </section>
+                    <ul class="tabs clearfix" data-tabgroup="first-tab-group">
+                      <li><a href="#tab1" class="active">Additive Manufacturing</a></li>
+                      <li><a href="#tab2">Reverse Engineering</a></li>
+                      <li><a href="#tab3">Machining</a></li>
+                      <li><a href="#tab4">Electronics Fabrication</a></li>
+                      <li><a href="#tab5">Electronics Design</a></li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Affiliated Products -->
+    <div class="flex-container" id="Affiliatedproducts">
+        <div class="flex-item">
+            <img src="img/s0lidw0rks-logo.png"/>
+        </div>
+        <div class="flex-item">
+            <img src="img/diptr8ce-logo.png"/>
+        </div>
+        <div class="flex-item">
+            <img src="img/x0m-logo.png"/>
+        </div>
+        <div class="flex-item">
+            <img src="img/Tev0-logo.png"/>
+        </div>
+        <div class="flex-item">
+            <img src="img/PRL8-logo.png"/>
+        </div>
+        <div class="flex-item">
+            <img src="img/V5-logo.png"/>
+        </div>
+        <div class="flex-item">
+            <img src="img/fusi0n-logo.png" />
+        </div>
+        <div class="flex-item">
+            <img src="img/3dsyst3ms-logo.png"/>
+        </div>
+        <div class="flex-item">
+            <img src="img/F0rmlabs-logo.png"/>
+        </div>
+        <div class="flex-item">
+            <img src="img/cre0-logo.png"/>
+        </div>
+        <div class="flex-item">
+            <img src="img/8nsys-logo.png"/>
+        </div>
+        <div class="flex-item">
+            <img src="img/0rcad-logo.png"/>
+        </div>
+    </div>
+
+
+    <!-- Why Choose Us? -->
+    <div class="WCU-feature" id="WhyChooseUs">
+        <div class="container">
+            <div class="left-text">
+                    <h4>Why Choose Us?</h4>
+                    <div class="line-dec"></div>
+            </div>
+        </div>
+            
         <div class="row">
-            <div class="col-md-8 blog-main">
-                <h3 class="pb-4 mb-4 font-italic border-bottom">
-                    From the Firehose
-                </h3>
+            <div class="col-lg-3 col-md-6 col-sm-12 bottom-space">
+                    <i class="fa fa-image fa-inverse fa-5x fa-icon-image"></i>
+                        <h3 class="item-title"> Designing</h3>
+                    <p>
+                    This is an amazing set of animated accordions based completely on CSS. They come oriented both vertically and horizontally in order to fit properly in your project. In order to see the slides,
+                    </p>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 bottom-space">
+                            <i class="fa fa-lightbulb-o fa-inverse fa-5x fa-icon-image" ></i>
+                                    <h3 class="item-title"> Developing</h3>
+                                <p>
+                                    This is an amazing set of animated accordions based completely on CSS. They come oriented both vertically and horizontally in order to fit properly in your project. In order to see the slides,
+                            </p>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 bottom-space">
+                            <i class="fa fa-truck fa-inverse fa-5x fa-icon-image"></i>
+                                    <h3 class="item-title"> Marketing</h3>
+                            <p>
+                                This is an amazing set of animated accordions based completely on CSS. They come oriented both vertically and horizontally in order to fit properly in your project. In order to see the slides,
+                            </p>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 bottom-space">
+                    <i class="fa fa-diamond fa-inverse fa-5x fa-icon-image"></i>
+                        <h3 class="item-title"> Branding</h3>
+                    <p>
+                    This is an amazing set of animated accordions based completely on CSS. They come oriented both vertically and horizontally in order to fit properly in your project. In order to see the slides,
+                    </p>
+            </div>
+        </div>
 
-                <div class="blog-post">
-                    <h2 class="blog-post-title">Sample blog post</h2>
-                    <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
-
-                    <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
-                    <hr>
-                    <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-                    <blockquote>
-                        <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    </blockquote>
-                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-                    <h2>Heading</h2>
-                    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                    <h3>Sub-heading</h3>
-                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                    <pre><code>Example code block</code></pre>
-                    <p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-                    <h3>Sub-heading</h3>
-                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <ul>
-                        <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-                        <li>Donec id elit non mi porta gravida at eget metus.</li>
-                        <li>Nulla vitae elit libero, a pharetra augue.</li>
-                    </ul>
-                    <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-                    <ol>
-                        <li>Vestibulum id ligula porta felis euismod semper.</li>
-                        <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
-                        <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-                    </ol>
-                    <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
-                </div><!-- /.blog-post -->
-
-                <div class="blog-post">
-                    <h2 class="blog-post-title">Another blog post</h2>
-                    <p class="blog-post-meta">December 23, 2013 by <a href="#">Jacob</a></p>
-
-                    <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-                    <blockquote>
-                        <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    </blockquote>
-                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-                    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                </div><!-- /.blog-post -->
-
-                <div class="blog-post">
-                    <h2 class="blog-post-title">New feature</h2>
-                    <p class="blog-post-meta">December 14, 2013 by <a href="#">Chris</a></p>
-
-                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <ul>
-                        <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-                        <li>Donec id elit non mi porta gravida at eget metus.</li>
-                        <li>Nulla vitae elit libero, a pharetra augue.</li>
-                    </ul>
-                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-                    <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-                </div><!-- /.blog-post -->
-
-                <nav class="blog-pagination">
-                    <a class="btn btn-outline-primary" href="#">Older</a>
-                    <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
-                </nav>
-
-            </div><!-- /.blog-main -->
-
-            <aside class="col-md-4 blog-sidebar">
-                <div class="p-4 mb-3 bg-light rounded">
-                    <h4 class="font-italic">About</h4>
-                    <p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+        <div class="container">
+            <div class="row">
+                <div class="left-text">
+                    </br></br><h4>Testimonials</h4>
+                    <div class="line-dec"></div>
                 </div>
-
-                <div class="p-4">
-                    <h4 class="font-italic">Archives</h4>
-                    <ol class="list-unstyled mb-0">
-                        <li><a href="#">March 2014</a></li>
-                        <li><a href="#">February 2014</a></li>
-                        <li><a href="#">January 2014</a></li>
-                        <li><a href="#">December 2013</a></li>
-                        <li><a href="#">November 2013</a></li>
-                        <li><a href="#">October 2013</a></li>
-                        <li><a href="#">September 2013</a></li>
-                        <li><a href="#">August 2013</a></li>
-                        <li><a href="#">July 2013</a></li>
-                        <li><a href="#">June 2013</a></li>
-                        <li><a href="#">May 2013</a></li>
-                        <li><a href="#">April 2013</a></li>
-                    </ol>
+            </div>
+            <div class="row">
+                <div class="col-md-10 mx-auto">
+                    <div id="owl-testimonials" class="owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="testimonials-item">
+                                <!-- <a href="img/1st-big-item.jpg" data-lightbox="image-1"><img src="img/1st-item.jpg" alt=""></a> -->
+                                
+                                <div class="text-content">
+                                    <p>"...Very well customer service oriented and resourceful in finding solutions, has good attention to detail and accuracy at the same time, shows very good judgment in designs, understanding of our products and usage out in the field. They're always looking to make improvements, anticipates problems and solves them before they develop, work very well with us and all departments in-house: assembly, manufacturing etc. Very good results of mechanical design work they did on our cameras."</p>
+                                    <h4>John Rodriguez</h4>
+                                    <span>Panavision</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="testimonials-item">
+                                <!-- <a href="img/2nd-big-item.jpg" data-lightbox="image-2"><img src="img/2nd-item.jpg" alt=""></a> -->
+                                <div class="text-content">
+                                    <p>Carl is blah blah</p>
+                                    <h4>Dr. Vishal Shah</h4>
+                                    <span>Quspin</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+        
+    </div>
 
-                <div class="p-4">
-                    <h4 class="font-italic">Elsewhere</h4>
-                    <ol class="list-unstyled">
-                        <li><a href="#">GitHub</a></li>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">Facebook</a></li>
-                    </ol>
+    <!-- With Whom Have We Worked? -->
+    <div class="projects-content" id="WithWhom">
+        <div class="container">
+                <div class="left-text">
+                        <h4>With Whom Have We Worked?</h4>
+                        <div class="line-dec"></div>
+                    </div>
+        </div>
+
+        <div class="flex-container">
+                <div class="flex-item">
+                    <img src="img/PanavisionLogo.png" alt="1" class="img-responsive" />
                 </div>
-            </aside><!-- /.blog-sidebar -->
+                <div class="flex-item">
+                    <img src="img/smerc_logo_hi-res.png" alt="2" class="img-responsive" />
+                </div>
+                <div class="flex-item">
+                    <img src="img/medtr0nic-vector-logo.png" alt="3" class="img-responsive" />
+                </div>
+                <div class="flex-item">
+                    <a href="https://www.quspin.com" rel="nofollow noopener noreferrer"><img src="img/Quspin-logo.png" alt="4" class="img-responsive"/></a>
+                </div>
+                <div class="flex-item">
+                        <a href="https://breakthrough.photography" rel="nofollow noopener noreferrer"><img src="img/Breakthrough-Logo.png" alt="5"class="img-responsive" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        </div><!-- /.row -->
 
-    </main><!-- /.container -->
-
-    <footer class="blog-footer">
-        <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-        <p>
-            <a href="#">Back to top</a>
-        </p>
-    </footer>
+    <div class="contact-content" id="contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact-form">
+                        <div class="row">
+                            <form id="contact" action="" method="post">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                      <fieldset>
+                                        <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="">
+                                      </fieldset>
+                                    </div>
+                                    <div class="col-md-12">
+                                      <fieldset>
+                                        <input name="email" type="email" class="form-control" id="email" placeholder="Your email..." required="">
+                                      </fieldset>
+                                    </div>
+                                    <div class="col-md-12">
+                                      <fieldset>
+                                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required=""></textarea>
+                                      </fieldset>
+                                    </div>
+                                    <div class="col-md-12">
+                                      <fieldset>
+                                        <button type="submit" id="form-submit" class="btn">Send Message</button>
+                                      </fieldset>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="map">
+                    <!-- How to change your own map point
+                           1. Go to Google Maps
+                           2. Click on your location point
+                           3. Click "Share" and choose "Embed map" tab
+                           4. Copy only URL and paste it within the src="" field below
+                    -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1197183.8373802372!2d-1.9415093691103689!3d6.781986417238027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdb96f349e85efd%3A0xb8d1e0b88af1f0f5!2sKumasi+Central+Market!5e0!3m2!1sen!2sth!4v1532967884907" width="100%" height="390" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+   
 </body>
+<footer>
+        <div id="footer"></div>
+</footer>
 </html>
