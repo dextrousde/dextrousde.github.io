@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Dextrous Design Engineering</title>
+        <meta name="description" content="Physical product design, engineering and manufacturing">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" href="css/hero-slider.css">
+        <link rel="stylesheet" href="css/dde-main.css">
+        <link rel="stylesheet" href="css/owl-carousel.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,600,700,800,900">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+    </head>
+
+    <script>
+        $(document).ready(function(){
+            // Add smooth scrolling to all links
+            $(".fixed-side-navbar a, .primary-button a").on('click', function(event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function(){
+            
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+                } // End if
+            });
+
+            $("#header").load("support-pages/header.html"); 
+            $("#footer").load("support-pages/footer.html"); 
+        });
+    </script>
+
+<header>
+    <div id="header"></div>
+</header>
+
+<body>
+    
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ContactUsModal">Launch demo modal</button>
+  
+  <!-- Modal -->
+  <div class="modal" id="ContactUsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          
+        <div class="modal-header">
+            <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body mb-0 p-0">
+            <div class="embed-responsive embed-responsive-contactform">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfXjWGbzoMJepC7P9G_u_UnoAQNxmrggLWIjeWthuEuQ3Tf4w/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" allowfullscreen>Loading…</iframe>
+            </div>
+        </div>
+
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+    <!-- Service Offerings -->
+    <div class="projects-content" id="ServiceOfferings">  
+            <div class="container">
+                <div class="left-text">
+                        <h4>Service Offerings</h4>
+                        <div class="line-dec"></div>
+                
+                    <p>
+                        Whether your organization needs on-demand help, specialized engineering expertise or is looking to save cost on R&D and manufacturing introducing activities, we're here to assist you. 
+                        We are pleased to offer the following services, billed at our hourly rate or with a pre-negotiated contract. Contact us to begin!
+                    </br></br>
+                    </p>
+                    <div class="row">
+                        <div class="col-sm">
+                            <p> 
+                                Industrial & human factors design</br>
+                                3D CAD modeling</br>
+                                Detailed drawings with GD&T (ASME Y14.5-2009 standard)</br>
+                                Photo-realistic renderings</br>
+                                Prototyping</br>
+                                3D Printing</br>
+                                3D Scanning</br>
+                                Design of assemblies for ultrasonic welding, laser welding, adhesives, fasteners, welding, snap fits, shrink fits.</br>
+                                Part design for injection molding, sheet metal, CNC-machining, welding, casting, 3D printing, die cutting.</br>
+                                Mold design and mold flow analysis</br>
+                                Finite element analysis (FEA) for deformation, structural, thermal, vibration and fatigue</br>
+                                Reverse engineering</br>
+                                Design for Manufacturability and Assembly</br>
+                                Value engineering / design to cost</br>
+                                Stack-up tolerance analysis (worst case and stochastic methods)</br>
+                                Design for Six Sigma</br>
+                                Tooling design</br>
+                                Processes design</br>                                                                  
+                                Electro-mechanical designs, PCBA packaging of boards, motors, mechanisms.</br>
+                                PCB layout designs</br>
+                                </br>
+
+                            </p>
+                        </div>
+                        <div class="col-sm">
+                            <p> 
+                                Process characterizations, Design of Experiments (DOE) for manufacturing processes</br>
+                                Measurement systems analysis: Gage R&R, etc.</br>
+                                Establishing statistical process controls</br>
+                                </br>
+                                <i>Documentations:</i></br>
+                                Specifications</br>
+                                Engineering drawings</br>
+                                Failure Modes and Effects Analysis (FMEA)</br>
+                                Bill of Materials (BOM)</br>
+                                Product verifications plan/report</br>
+                                Process validations plan/report (IQ/OQ/PQs)</br>
+                                Gage R&R report</br>
+                                Attributes Agreement Analysis report</br>
+                                Design history file for FDA 510(k) submission and CE marking</br>
+                                Procedures</br>
+                                </br>
+                                <i>Capabilities:</i></br>
+                                Solidworks, PTC Creo (Pro/Engineer), Autodesk Fusion 360</br>
+                                FEA using Solidworks, Creo, ANSYS or Comsol</br>
+                                Programming in Matlab, C, Java</br>
+                                Diptrace, OrCAD</br>
+                                Hands-on machining, CNC machining</br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <!-- Product Development -->
+    <div class="service-content" id="productdevelopment">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="left-text">
+                            <h4>End-to-End Product Development</h4>
+                            <div class="line-dec"></div>
+                            <!-- <p>We offer end-to-end product development solution from industrial design, ideation, prototyping, engineering to manufacturing introduction.</p> -->
+                            <ul>
+                                <li>We help product businesses of all experience levels to take their ideas from industrial design to production status. We offer high quality design engineering and expertise, with transparent pricing and strict confidentiality. You own what you ask us to design at every step. To estimate your cost, use the pricing estimator.</li>
+                            </ul>
+                            <div class="primary-button">
+                                <a href="#portfolio">See our portfolio</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="service-item">
+                                    <h4>Product Development</h4>
+                                    <div class="line-dec"></div>
+                                    <p>End-to-end product development process from industrial design, ideation, prototyping, engineering to manufacturing introduction or portions thereof.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="service-item">
+                                    <h4>Competitive Analysis</h4>
+                                    <div class="line-dec"></div>
+                                    <p>Teardown analysis of your product with specified competitors' products in terms of cost, design and functionality, along with a roadmap for your product improvements.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="service-item">
+                                    <h4>Service Menu</h4>
+                                    <div class="line-dec"></div>
+                                    <p>Looking to offload certain R&amp;D or Manufacturing tasks? See our full Service Offerings for mechanical, electrical and software engineering. </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="service-item">
+                                    <h4>Patent Documentation</h4>
+                                    <div class="line-dec"></div>
+                                    <p>Whether we designed your product or not, we prepare patent documentations and work with a patent agent or attorney for your patent filings. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+            </div>
+    </div>
+
+    <!-- Competitive Analysis -->
+    <div class="projects-content" id="CompetitiveAnalysis">  
+            <div class="container">
+                <div class="left-text">
+                        <h4>Competitive Analysis</h4>
+                        <div class="line-dec"></div>
+                </div>
+                <p>
+                    Teardown analysis of your product with specified competitors' products in terms of cost, design and functionality, along with a roadmap for your product improvements.
+                </p>
+            </div>
+    </div>
+            
+   
+</body>
+<footer>
+        <div id="footer"></div>
+</footer>
+</html>
