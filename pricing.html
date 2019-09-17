@@ -49,53 +49,51 @@
 
             $("#header").load("support-pages/header.html"); 
             $("#footer").load("support-pages/footer.html"); 
+            $('#contactusmodal').on('show.bs.modal', function (e) {
+                var button = $(e.relatedTarget);
+                var modal = $(this);
+
+                // load content from HTML string
+                //modal.find('.modal-body').html("Nice modal body baby...");
+
+                // or, load content from value of data-remote url
+                modal.find('.modal-body').load(button.data("remote"));
+            });
         });
     </script>
 
-<header>
-    <div id="header"></div>
-</header>
+    <header>
+        <div id="header"></div>
+    </header>
 
 <body>
+    <!-- Contact Us Modal -->
+    <div class="modal" id="contactusmodal" tabindex="-1" role="dialog" aria-labelledby="ContactUs" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
     
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ContactUsModal">Launch demo modal</button>
-  
-  <!-- Modal -->
-  <div class="modal" id="ContactUsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-          
-        <div class="modal-header">
-            <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-
-        <div class="modal-body mb-0 p-0">
-            <div class="embed-responsive embed-responsive-contactform">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfXjWGbzoMJepC7P9G_u_UnoAQNxmrggLWIjeWthuEuQ3Tf4w/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" allowfullscreen>Loading…</iframe>
+                <div class="modal-body"> </div>
             </div>
         </div>
-
-        <!-- <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div> -->
-      </div>
     </div>
-  </div>
 
     <!-- Service Offerings -->
-    <div class="projects-content" id="ServiceOfferings">  
+    <div class="projects-content" id="serviceofferings">  
             <div class="container">
                 <div class="left-text">
-                        <h4>Service Offerings</h4>
-                        <div class="line-dec"></div>
+                    <h4>Service Offerings</h4>
+                    <div class="line-dec"></div>
                 
                     <p>
-                        Whether your organization needs on-demand help, specialized engineering expertise or is looking to save cost on R&D and manufacturing introducing activities, we're here to assist you. 
-                        We are pleased to offer the following services, billed at our hourly rate or with a pre-negotiated contract. Contact us to begin!
-                    </br></br>
+                        Do you need on-demand help, specialized engineering expertise or are simply looking to save cost and speed up your R&D or manufacturing operations? We can assist! We offer the following services, billed at our hourly rate or by contract. <a href="" data-remote="contactus.html" data-toggle="modal" data-target="#contactusmodal">Tell us what you need.</a>
+                        </br></br>
                     </p>
+
                     <div class="row">
                         <div class="col-sm">
                             <p> 
@@ -150,6 +148,10 @@
                             </p>
                         </div>
                     </div>
+
+                    <div class="primary-button">
+                        <a href="" data-remote="contactus.html" data-toggle="modal" data-target="#contactusmodal">Contact Us</a>
+                    </div>
                 </div>
             </div>
     </div>
@@ -158,71 +160,97 @@
     <div class="service-content" id="productdevelopment">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="left-text">
-                            <h4>End-to-End Product Development</h4>
-                            <div class="line-dec"></div>
-                            <!-- <p>We offer end-to-end product development solution from industrial design, ideation, prototyping, engineering to manufacturing introduction.</p> -->
-                            <ul>
-                                <li>We help product businesses of all experience levels to take their ideas from industrial design to production status. We offer high quality design engineering and expertise, with transparent pricing and strict confidentiality. You own what you ask us to design at every step. To estimate your cost, use the pricing estimator.</li>
-                            </ul>
-                            <div class="primary-button">
-                                <a href="#portfolio">See our portfolio</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="service-item">
+                        <div class="col-md-8">
+                            <div class="left-text">
                                     <h4>Product Development</h4>
                                     <div class="line-dec"></div>
-                                    <p>End-to-end product development process from industrial design, ideation, prototyping, engineering to manufacturing introduction or portions thereof.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="service-item">
-                                    <h4>Competitive Analysis</h4>
-                                    <div class="line-dec"></div>
-                                    <p>Teardown analysis of your product with specified competitors' products in terms of cost, design and functionality, along with a roadmap for your product improvements.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="service-item">
-                                    <h4>Service Menu</h4>
-                                    <div class="line-dec"></div>
-                                    <p>Looking to offload certain R&amp;D or Manufacturing tasks? See our full Service Offerings for mechanical, electrical and software engineering. </p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="service-item">
-                                    <h4>Patent Documentation</h4>
-                                    <div class="line-dec"></div>
-                                    <p>Whether we designed your product or not, we prepare patent documentations and work with a patent agent or attorney for your patent filings. </p>
-                                </div>
+                                    <ul>
+                                        <li>
+                                        The process of bringing a product from idea to production can seem daunting and complex. In addition to all the other business activities you must do, you as a product business have many demands on your time. Let us help you with engineering. We have engineered a handful of successful products on the market now, and a few patents along the way. 
+                                        </br></br>
+                                        We work with you through regular meetings and by milestones, from industrial design, proof-of-concept, engineering &amp; prototyping, to manufacturing introduction and production launch. You always own what we produce and will be informed on your product’s progress at each step. Since every product is different, pricing varies as well. We made a pricing estimator for you to get an idea of what you will pay for your project.  
+                                        </li>
+                                    </ul>
+                                    <div class="primary-button">
+                                        <a href="">Pricing Estimator</a>
+                                    </div>
                             </div>
                         </div>
-                    </div>                
+                        <div class="col-md-4">
+                            <img src="img/productdevflowchart.png" class="rounded mx-auto d-block" alt="Responsive image">
+                            </br>
+                        </div>
+                                                      
                 </div>
             </div>
     </div>
 
     <!-- Competitive Analysis -->
-    <div class="projects-content" id="CompetitiveAnalysis">  
+    <div class="projects-content" id="competitiveanalysis">  
             <div class="container">
-                <div class="left-text">
-                        <h4>Competitive Analysis</h4>
-                        <div class="line-dec"></div>
+                <div class="row">
+                <div class="col-md-6">
+                    <div class="left-text">
+                            <h4>Competitive Analysis</h4>
+                            <div class="line-dec"></div>
+                    </div>
+                    <p>
+                        A teardown is the act of disassembling a product such that it helps to identify its component parts, chip and system functionalities, and component costing information. Results are disseminated through photographs, component lists, assembly and mechanisms descriptions. Disassembly may be destructive. 
+                        Three main purposes of performing teardowns and comparing teardowns are to 1) identify innovations to improve a product in its design, functionalities and engineering / manufacturing, 2) estimate costing of a bill of materials (BOM) to find improvements in costs and 3) if necessary, be used in court and litigation proceedings to show where intellectual property or patents might be infringed by another firm’s part or product. 
+                    </br></br>
+                        Dextrous Design Engineering performs teardown analysis starting at $1500 and increases in rate with added complexity of a product, which requires additional analysis time. When multiple product teardowns are requested, we include a comparative analysis at the conclusion free of charge. 
+                    </br></br>
+                    </p>
+                    <div class="primary-button">
+                        <a href="" data-remote="contactus.html" data-toggle="modal" data-target="#contactusmodal">Contact Us</a>
+                    </div>
                 </div>
-                <p>
-                    Teardown analysis of your product with specified competitors' products in terms of cost, design and functionality, along with a roadmap for your product improvements.
-                </p>
+                <div class="col-md-6">
+                </br></br>
+                        <img src="img/teardown.jpg" class="rounded mx-auto d-block" alt="Responsive image">
+                    
+                </div>  
+                </div>
             </div>
+    </div>
+
+    <!-- IP Protection -->
+    <div class="tabs-content" id="ipprotection">
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                    <div class="left-text">
+                        <h4>Intellectual Properties Protection</h4>
+                        <div class="line-dec"></div>
+                    </div>
+
+                    <div class="left-text">
+                        <ul>
+                            <li>
+                            We offer competitive pricing on US and international patent filings for both provisional and regular utility patents. Since the language in the provisional patent is important to allowing the regular patent to use its earlier filing date, we advised our clients to consult with us on all their patent filings. Our experienced attorney and agent can assist you wherever you are on this journey.  Contact us to begin. 
+                            </li>
+                        </br>
+                        </ul>
+                        <div class="primary-button">
+                            <a href="" data-remote="contactus.html" data-toggle="modal" data-target="#contactusmodal">Contact Us</a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                        </br>
+                        <img src="img/patent.jpg" class="rounded mx-auto d-block" alt="Responsive image">         
+                    </div>
+                </div>
+
+
+        </div>
     </div>
             
    
 </body>
-<footer>
-        <div id="footer"></div>
-</footer>
+
+    <footer>
+            <div id="footer"></div>
+    </footer>
+
 </html>

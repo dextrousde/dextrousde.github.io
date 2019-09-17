@@ -1,11 +1,3 @@
-/* 
-
-Vanilla Template
-
-https://templatemo.com/tm-526-vanilla
-
-*/
-
 jQuery(document).ready(function($) {
 
 	'use strict';
@@ -61,7 +53,7 @@ jQuery(document).ready(function($) {
         
         pagination : true,
         paginationNumbers: false,
-        autoPlay: 6000, //Set AutoPlay to 3 seconds
+        autoPlay: 2000, //Set AutoPlay to 3 seconds
         items : 2, //1 items above 1000px browser width
         itemsDesktop : [1000,2], //1 items between 1000px and 901px
         itemsDesktopSmall : [900,2], // betweem 900px and 601px

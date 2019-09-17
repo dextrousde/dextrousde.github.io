@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="css/dde-main.css">
         <link rel="stylesheet" href="css/owl-carousel.css">
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,600,700,800" rel="stylesheet">
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
@@ -26,14 +27,14 @@
     </head>
 
     <script>
-        function openCity(cityName) {
-            var i;
-            var x = document.getElementsByClassName("city");
-            for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";  
-            }
-            document.getElementById(cityName).style.display = "block";  
-        }
+        // function openCity(cityName) {
+        //     var i;
+        //     var x = document.getElementsByClassName("city");
+        //     for (i = 0; i < x.length; i++) {
+        //     x[i].style.display = "none";  
+        //     }
+        //     document.getElementById(cityName).style.display = "block";  
+        // }
 
         $(document).ready(function(){
             // Add smooth scrolling to all links
@@ -53,28 +54,55 @@
                     scrollTop: $(hash).offset().top
                 }, 800, function(){
             
-                    // Add hash (#) to URL when done scrolling (default click behavior)
-                    window.location.hash = hash;
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
                 });
                 } // End if
             });
 
+            // Load header, footer and modals if needed 
             //$("#header").load("support-pages/header.html"); 
-            $("#footer").load("support-pages/footer.html"); 
+            $("#footer").load("support-pages/footer.html");
+            $('#contactusmodal').on('show.bs.modal', function (e) {
+                var button = $(e.relatedTarget);
+                var modal = $(this);
+
+                // load content from HTML string
+                //modal.find('.modal-body').html("Nice modal body baby...");
+
+                // or, load content from value of data-remote url
+                modal.find('.modal-body').load(button.data("remote"));
+            });
         });
+
+       
     </script>
 
 <body>
+    <!-- Contact Us Modal -->
+    <div class="modal" id="contactusmodal" tabindex="-1" role="dialog" aria-labelledby="ContactUs" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+                <div class="modal-header">
+                        <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                </div>
+                <div class="modal-body"> </div>
+          </div>
+        </div>
+    </div>
+
     <!-- Side Navigation -->
     <div class="fixed-side-navbar">
         <ul class="nav flex-column">
             <!-- <li class="nav-item"><a class="nav-link" href="#home"><span>Intro</span></a></li> -->
-            <li class="nav-item"><a class="nav-link" href="#services"><span>Services</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#portfolio"><span>Portfolio</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#processes"><span>Processes</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#WhyChooseUs"><span>Why Choose Us</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#WithWhom"><span>Clients</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact-us"><span>Contact Us</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="index#services"><span>Services</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="index#portfolio"><span>Portfolio</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="index#processes"><span>Processes</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="index#WhyChooseUs"><span>Why Choose Us</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="" data-remote="contactus.html" data-toggle="modal" data-target="#contactusmodal"><span>Contact Us</span></a></li>
+            <!-- <li class="nav-item"><a class="nav-link" href="#contact-us"><span>Contact Us</span></a></li> -->
         </ul>
     </div>
 
@@ -99,7 +127,9 @@
                     <div class="left-text">
                         <h4>What Do We Do?</h4>
                         <div class="line-dec"></div>
-                        <p>We offer four (4) major service categories for products in the following industries:</p>
+                        <p>
+                            We help clients bring physical product concepts to reality. We offer 4 service categories in the following product fields. Explore each category to learn more about pricing.                         
+                        </p>
                         <ul>
                             <li>-  Internet of Things (IoT)</li>
                             <li>-  Consumer</li>
@@ -118,30 +148,47 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="service-item">
-                                <h4>Product Development</h4>
+                                <a href="pricing.html#productdevelopment">
+                                    <h4>Product Development</h4>
+                                </a>
                                 <div class="line-dec"></div>
-                                <p>End-to-end product development process from industrial design, ideation, prototyping, engineering to manufacturing introduction or portions thereof.</p>
+                                
+                                <p>
+                                    End-to-end product development from industrial design, proof-of-concept, engineering & prototyping to manufacturing introduction &amp; production launch.
+                                </p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="service-item">
-                                <h4>Competitive Analysis</h4>
+                                <a href="pricing.html#competitiveanalysis">                                    
+                                    <h4>Competitive Analysis</h4>
+                                </a>
                                 <div class="line-dec"></div>
-                                <p>Teardown analysis of your product with specified competitors' products in terms of cost, design and functionality, along with a roadmap for your product improvements.</p>
+                                <p>
+                                   Teardown analysis of your product with option to compare to competitors' products in terms of design, costs and functionality, along with a roadmap for improvements.
+                                </p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="service-item">
-                                <h4>Service Menu</h4>
+                                <a href="pricing.html#serviceofferings">                                    
+                                    <h4>Service Menu</h4>
+                                </a>
                                 <div class="line-dec"></div>
-                                <p>Looking to offload certain R&amp;D or Manufacturing tasks? See our full Service Offerings for mechanical, electrical and software engineering. </p>
+                                <p>
+                                    Looking to offload certain R&amp;D or Manufacturing tasks? See our full service offerings for mechanical, electrical and software engineering. 
+                                </p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="service-item">
-                                <h4>Patent Documentation</h4>
+                                <a href="pricing.html#ipprotection">                                    
+                                    <h4>Patent Documentation</h4>
+                                </a>
                                 <div class="line-dec"></div>
-                                <p>Whether we designed your product or not, we prepare patent documentations and work with a patent agent or attorney for your patent filings. </p>
+                                <p>
+                                    Whether or not we designed your product, we prepare patent documentations and work with a patent agent or attorney for your patent filings. 
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -165,23 +212,23 @@
                     <div id="owl-portfolios" class="owl-carousel owl-theme">
                         <div class="item">
                             <div class="portfolios-item">
-                                <a href="img/1st-big-item.jpg" data-lightbox="image-1"><img src="img/1st-item.jpg" alt=""></a>
+                                <a href="img/Cufflinks-big.jpg" data-lightbox="image-1" data-title="Customized, raised letter, monogram or logo on square cufflink with anti-rotational neck, cast in precious metals with 3D printed molds, designed and made for a jeweler."><img src="img/Cufflinks.jpg" alt=""></a>
                                 <div class="text-content">
-                                    <h4>Smart Cufflinks</h4>
-                                    <span>IoT</span>
+                                    <h4>Raised Letter Cufflinks with Anti-Rotation</h4>
+                                    <span>Consumer</span>
                                 </div>
                             </div>
                         </div>
                         <div class="item">
                             <div class="portfolios-item">
-                                <a href="img/2nd-big-item.jpg" data-lightbox="image-1"><img src="img/2nd-item.jpg" alt=""></a>
+                                <a href="img/clock-big.jpg" data-lightbox="image-1" data-title="Inspired by old-school Mustang speedometer looks, this smart clock uses BLE to customize its settings."><img src="img/clock.jpg" alt=""></a>
                                 <div class="text-content">
-                                    <h4>Mustang Speedometer Clock</h4>
-                                    <span>IoT</span>
+                                    <h4>Mustang-inspired Smart Clock</h4>
+                                    <span>Internet of Things</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
+                        <!-- <div class="item">
                             <div class="portfolios-item">
                                 <a href="img/3rd-big-item.jpg" data-lightbox="image-1"><img src="img/3rd-item.jpg" alt=""></a>
                                 <div class="text-content">
@@ -189,17 +236,17 @@
                                     <span>Health &amp; Medical</span>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="item">
                             <div class="portfolios-item">
-                                <a href="img/4th-big-item.jpg" data-lightbox="image-1"><img src="img/4th-item.jpg" alt=""></a>
+                                <a href="img/fMCG-big.jpg" data-lightbox="image-1" data-title="Developed for an anatomic devices maker, this concept fetal MCG machine aims to become to next standard-of-care in fetal arrythmia detection. "><img src="img/fMCG.jpg" alt=""></a>
                                 <div class="text-content">
-                                    <h4>Fetal Magnetocardiography (fMCG) System</h4>
+                                    <h4>Fetal Magnetocardiography System (Concept)</h4>
                                     <span>Health &amp; Medical</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
+                        <!-- <div class="item">
                             <div class="portfolios-item">
                                 <a href="img/5th-big-item.jpg" data-lightbox="image-1"><img src="img/5th-item.jpg" alt=""></a>
                                 <div class="text-content">
@@ -207,17 +254,17 @@
                                     <span>Consumer</span>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="item">
                             <div class="portfolios-item">
-                                <a href="img/6th-big-item.jpg" data-lightbox="image-1"><img src="img/6th-item.jpg" alt=""></a>
+                                <a href="img/mug-big.jpg" data-lightbox="image-1" data-title="Not your average vacuum flask! This one can hold a hot and a cold (or a chaser and a strong) liquid at the same time."><img src="img/Mug.jpg" alt=""></a>
                                 <div class="text-content">
-                                    <h4>Travel Mug for Busy People</h4>
+                                    <h4>Dual Cup Vacuum Flask</h4>
                                     <span>Consumer</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
+                        <!-- <div class="item">
                             <div class="portfolios-item">
                                 <a href="img/2nd-big-item.jpg" data-lightbox="image-1"><img src="img/2nd-item.jpg" alt=""></a>
                                 <div class="text-content">
@@ -225,21 +272,21 @@
                                     <span>Automotive</span>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="item">
                             <div class="portfolios-item">
-                                <a href="img/1st-big-item.jpg" data-lightbox="image-1"><img src="img/1st-item.jpg" alt=""></a>
+                                <a href="img/motorcycle-big.jpg" data-lightbox="image-1" data-title="This is our own internally developed product with a top speed of 60mph and 60 miles on a full charge."><img src="img/motorcycle.jpg" alt=""></a>
                                 <div class="text-content">
-                                    <h4>48V Electric Motorcycle</h4>
+                                    <h4>Urban Electric Motorcycle</h4>
                                     <span>Electric Vehicles &amp; E-mobility</span>
                                 </div>
                             </div>
                         </div>
                         <div class="item">
                             <div class="portfolios-item">
-                                <a href="img/1st-big-item.jpg" data-lightbox="image-1"><img src="img/1st-item.jpg" alt=""></a>
+                                <a href="img/Magneto-big.jpg" data-lightbox="image-1" data-title="For our client Quspin, the world’s smallest and best magnetometer is already here. Its performance rivals that of SQUID magnetometers but at a fraction of the cost."><img src="img/Magneto.jpg" alt=""></a>
                                 <div class="text-content">
-                                    <h4>Atomic Magnetometers</h4>
+                                    <h4>World's Smallest Atomic Magnetometer</h4>
                                     <span>Scientific Devices</span>
                                 </div>
                             </div>
@@ -265,23 +312,27 @@
                     <section id="first-tab-group" class="tabgroup">
                       <div id="tab1">
                         <img src="img/1st-tab.jpg" alt="">
-                        <p>3D printing with FDM, SLA printers</p>
+                        <p>3D printing with FDM, SLA, SLS printers.</p>
                       </div>
                       <div id="tab2">
                         <img src="img/2nd-tab.jpg" alt="">
-                        <p>Certified 3D scanning capabilities for reverse engineering</p>
+                        <p>Certified 3D scanning and measurement capabilities.</p>
                       </div>
                       <div id="tab3">
                         <img src="img/3rd-tab.jpg" alt="">
-                        <p>Machining capabilities including CNC, Mill, Lathe, Drill, Laser Cutting / Etching</p>
+                        <p>Machining capabilities including CNC, Mill, Lathe, Drill press, Laser Cutting/Etching, Grinder, Band Saw.</p>
                       </div>
                       <div id="tab4">
                         <img src="img/4th-tab.jpg" alt="">
-                        <p>Electrical system fabrication including soldering, spot welding, crimping</p>
+                        <p>Electrical system fabrication including soldering, spot welding, crimping, board design.</p>
                       </div>
                       <div id="tab5">
-                        <img src="img/4th-tab.jpg" alt="">
-                        <p>Electrical and PCB Layout Design</p>
+                        <img src="img/5th-tab.jpg" alt="">
+                        <p>Electronics, microcontroller, circuit testing with oscilloscopes, data logger, multimeter, CAN communications, DAQ devices.</p>
+                      </div>
+                      <div id="tab6">
+                        <img src="img/6th-tab.jpg" alt="">
+                        <p>Flux-cored arc welding, spot welding.</p>
                       </div>
                     </section>
                     <ul class="tabs clearfix" data-tabgroup="first-tab-group">
@@ -289,7 +340,8 @@
                       <li><a href="#tab2">Reverse Engineering</a></li>
                       <li><a href="#tab3">Machining</a></li>
                       <li><a href="#tab4">Electronics Fabrication</a></li>
-                      <li><a href="#tab5">Electronics Design</a></li>
+                      <li><a href="#tab5">Electronics Testing</a></li>
+                      <li><a href="#tab6">Welding</a></li>
                     </ul>
                     </div>
                 </div>
@@ -343,38 +395,42 @@
     <div class="WCU-feature" id="WhyChooseUs">
         <div class="container">
             <div class="left-text">
-                    <h4>Why Choose Us?</h4>
-                    <div class="line-dec"></div>
+                <h4>Why Choose Us?</h4>
+                <div class="line-dec"></div>
+                <p>
+                    We have been honored to work with many different companies over the years and we enjoy working with them in overcoming their unique product challenges. Why work with us boils down to four reasons.
+                </br></br>
+                </p>
             </div>
         </div>
             
         <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-12 bottom-space">
+            <div class="col-lg-2 col-sm-3 mx-auto bottom-space">
                     <i class="fa fa-image fa-inverse fa-5x fa-icon-image"></i>
-                        <h3 class="item-title"> Designing</h3>
+                        <h3 class="item-title"> Knowledgeable</h3>
                     <p>
-                    This is an amazing set of animated accordions based completely on CSS. They come oriented both vertically and horizontally in order to fit properly in your project. In order to see the slides,
+                        We are trained engineers with advanced degrees. You can be assured that your product engineering is in good hands with people who get it done. 
                     </p>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 bottom-space">
-                            <i class="fa fa-lightbulb-o fa-inverse fa-5x fa-icon-image" ></i>
-                                    <h3 class="item-title"> Developing</h3>
-                                <p>
-                                    This is an amazing set of animated accordions based completely on CSS. They come oriented both vertically and horizontally in order to fit properly in your project. In order to see the slides,
-                            </p>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 bottom-space">
-                            <i class="fa fa-truck fa-inverse fa-5x fa-icon-image"></i>
-                                    <h3 class="item-title"> Marketing</h3>
-                            <p>
-                                This is an amazing set of animated accordions based completely on CSS. They come oriented both vertically and horizontally in order to fit properly in your project. In order to see the slides,
-                            </p>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 bottom-space">
-                    <i class="fa fa-diamond fa-inverse fa-5x fa-icon-image"></i>
-                        <h3 class="item-title"> Branding</h3>
+            <div class="col-lg-2 col-sm-3 mx-auto bottom-space">
+                    <i class="fa fa-lightbulb-o fa-inverse fa-5x fa-icon-image" ></i>
+                        <h3 class="item-title"> Transparent</h3>
                     <p>
-                    This is an amazing set of animated accordions based completely on CSS. They come oriented both vertically and horizontally in order to fit properly in your project. In order to see the slides,
+                            We value integrity and transparency in our transactions. You will be well informed of deliverables and expectations upfront. 
+                    </p>
+            </div>
+            <div class="col-lg-2 col-sm-3 mx-auto bottom-space">
+                    <i class="fa fa-truck fa-inverse fa-5x fa-icon-image"></i>
+                        <h3 class="item-title"> Speedy</h3>
+                    <p>
+                        Our biggest strength is our efficiency. Without the formalities of a big organization, we can focus and execute swiftly on product design and engineering. 
+                    </p>
+            </div>
+            <div class="col-lg-2 col-sm-3 mx-auto bottom-space">
+                    <i class="fa fa-diamond fa-inverse fa-5x fa-icon-image"></i>
+                        <h3 class="item-title"> Customer Focused</h3>
+                    <p>
+                        Building a great product requires as much quality customer service as engineering. We pay attention to our people skills equally as our technical prowess. 
                     </p>
             </div>
         </div>
@@ -390,11 +446,11 @@
                 <div class="col-md-10 mx-auto">
                     <div id="owl-testimonials" class="owl-carousel owl-theme">
                         <div class="item">
-                            <div class="testimonials-item">
-                                <!-- <a href="img/1st-big-item.jpg" data-lightbox="image-1"><img src="img/1st-item.jpg" alt=""></a> -->
-                                
+                            <div class="testimonials-item">                        
                                 <div class="text-content">
-                                    <p>"...Very well customer service oriented and resourceful in finding solutions, has good attention to detail and accuracy at the same time, shows very good judgment in designs, understanding of our products and usage out in the field. They're always looking to make improvements, anticipates problems and solves them before they develop, work very well with us and all departments in-house: assembly, manufacturing etc. Very good results of mechanical design work they did on our cameras."</p>
+                                    <p>
+                                        Very well customer service oriented and resourceful in finding solutions, [Carl] shows very good judgment in designs, understanding of our products and usage out in the field and is always looking to make improvements, anticipates problems and solves them before they develop. He works very well with us and all departments in-house: assembly, manufacturing etc. Very good results of mechanical design work he did on our cameras.
+                                    </p>
                                     <h4>John Rodriguez</h4>
                                     <span>Panavision</span>
                                 </div>
@@ -402,9 +458,10 @@
                         </div>
                         <div class="item">
                             <div class="testimonials-item">
-                                <!-- <a href="img/2nd-big-item.jpg" data-lightbox="image-2"><img src="img/2nd-item.jpg" alt=""></a> -->
                                 <div class="text-content">
-                                    <p>Carl is blah blah</p>
+                                    <p>
+                                        Dex’s engineering is superb. We are very happy having them work on our product design, research and development, manufacturing and patent documentations. Their contributions have been indispensable. We can always expect the highest level of competence, transparency and customer service.                                     
+                                    </p>
                                     <h4>Dr. Vishal Shah</h4>
                                     <span>Quspin</span>
                                 </div>
@@ -440,55 +497,30 @@
                     <a href="https://www.quspin.com" rel="nofollow noopener noreferrer"><img src="img/Qusp1n-logo.png" alt="4" class="img-responsive"/></a>
                 </div>
                 <div class="flex-item">
-                        <a href="https://breakthrough.photography" rel="nofollow noopener noreferrer"><img src="img/Breakthrough-Logo.png" alt="5"class="img-responsive" /></a>
+                        <!-- <a href="https://breakthrough.photography" rel="nofollow noopener noreferrer"> -->
+                            <img src="img/Breakthrough-Logo.png" alt="5"class="img-responsive" />
+                        <!-- </a> -->
                 </div>
             </div>
         </div>
     </div>
 
-
-    <div class="contact-content" id="contact-us">
+    <!-- About Us Section -->
+    <div class="contact-content" id="AboutUs">
         <div class="container">
+            <div class="left-text">
+                    <h4>About Us</h4>
+                    <div class="line-dec"></div>
+                </div>
+
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md">
                     <div class="contact-form">
                         <div class="row">
-                            <form id="contact" action="" method="post">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                      <fieldset>
-                                        <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="">
-                                      </fieldset>
-                                    </div>
-                                    <div class="col-md-12">
-                                      <fieldset>
-                                        <input name="email" type="email" class="form-control" id="email" placeholder="Your email..." required="">
-                                      </fieldset>
-                                    </div>
-                                    <div class="col-md-12">
-                                      <fieldset>
-                                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required=""></textarea>
-                                      </fieldset>
-                                    </div>
-                                    <div class="col-md-12">
-                                      <fieldset>
-                                        <button type="submit" id="form-submit" class="btn">Send Message</button>
-                                      </fieldset>
-                                    </div>
-                                </div>
-                            </form>
+                            <p>
+                                Established in 2017, Dextrous Design Engineering was formed to bring the highest quality engineering and efficiency on the market to product businesses big and small. Carl Zhou is our head of engineering.
+                            </p>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="map">
-                    <!-- How to change your own map point
-                           1. Go to Google Maps
-                           2. Click on your location point
-                           3. Click "Share" and choose "Embed map" tab
-                           4. Copy only URL and paste it within the src="" field below
-                    -->
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1197183.8373802372!2d-1.9415093691103689!3d6.781986417238027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdb96f349e85efd%3A0xb8d1e0b88af1f0f5!2sKumasi+Central+Market!5e0!3m2!1sen!2sth!4v1532967884907" width="100%" height="390" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>

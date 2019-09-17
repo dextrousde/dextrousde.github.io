@@ -14,9 +14,14 @@
         <link rel="stylesheet" href="css/dde-main.css">
         <link rel="stylesheet" href="css/owl-carousel.css">
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,600,700,800" rel="stylesheet">
-        
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
         
     </head>
 
@@ -47,6 +52,17 @@
 
             $("#header").load("support-pages/header.html"); 
             $("#footer").load("support-pages/footer.html"); 
+            $('#contactusmodal').on('show.bs.modal', function (e) {
+                var button = $(e.relatedTarget);
+                var modal = $(this);
+
+                // load content from HTML string
+                //modal.find('.modal-body').html("Nice modal body baby...");
+
+                // or, load content from value of data-remote url
+                modal.find('.modal-body').load(button.data("remote"));
+            });
+
         });
     </script>
 
@@ -55,19 +71,21 @@
 </header>
 
 <body>
-        <!-- Side Navigation -->
-        <div class="fixed-side-navbar">
-                <ul class="nav flex-column">
-                    <!-- <li class="nav-item"><a class="nav-link" href="#home"><span>Intro</span></a></li> -->
-                    <li class="nav-item"><a class="nav-link" href="#services"><span>Services</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio"><span>Portfolio</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#processes"><span>Processes</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#WhyChooseUs"><span>Why Choose Us</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#WithWhom"><span>Clients</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact-us"><span>Contact Us</span></a></li>
-                </ul>
-        </div>
+    <!-- Contact Us Modal -->
+    <div class="modal" id="contactusmodal" tabindex="-1" role="dialog" aria-labelledby="ContactUs" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+                <div class="modal-header">
+                        <button type="button" class="btn btn-info" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                </div>
 
+                <div class="modal-body"> </div>
+          </div>
+        </div>
+    </div>
+    
         <div class="projects-content" id="Confidentiality">  
                 <div class="container">
                     <div class="left-text">
